@@ -19,6 +19,7 @@
     "jimp": "^0.2.28",
     "moment": "^2.22.1",
     "ms": "^2.1.1",
+    "figlet": "^1.2.1",
     "google-translate-api": "^2.3.0", 
     "opusscript": "0.0.6",
     "quick.db": "^6.2.0",
