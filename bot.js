@@ -178,7 +178,6 @@ client.on('ready', () => {
 
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
-	           if (!pr1.includes(message.author.id)) return;
     if (!msg.content.startsWith(prefix)) return undefined;
     
     let args = msg.content.split(' ');
