@@ -132,7 +132,7 @@ client.on('message', message => {
     });
 
 client.on('message' , message => {
-if(message.content === '$voice') { // الامر
+if(message.content === '&voice') { // الامر
     message.channel.send(`**${message.guild.members.filter(g => g.voiceChannel).size}**`);
 }
 });
