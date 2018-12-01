@@ -164,7 +164,7 @@ client.on('message', message => {
     if (message.member.voiceChannel) {
       message.member.voiceChannel.join()
         .then(connection => { 
-          message.reply('I have successfully connected to the channel!');
+          message.reply('OK!');
         })
         .catch(console.log);
     } else {
