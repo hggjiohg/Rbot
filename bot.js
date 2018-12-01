@@ -6,7 +6,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-const pr1 = ['449406602286465024' , '' , ''];
+const pr1 = ['449406602286465024' , '297092759611768834' , ''];
 
 const CodingXActivity = [
     "Rez", //IT's Broken Here
