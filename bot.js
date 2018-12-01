@@ -130,7 +130,44 @@ client.on('message', message => {
         }
     });
 
+client.on('message', message => {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+   
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+   
+  let args = message.content.split(" ").slice(1);
+  if(!args) return message.channel.send('${prefix}say <words>'); 
+   
+  if (command == "say") {
+            if (!pr1.includes(message.author.id)) return;
+   
+  message.channel.send(args.join("  "))
+      message.delete();
+    }
+  });
+ 
 
+client.on('message', message => {
+
+  if (!message.guild) return;
+            if (!pr1.includes(message.author.id)) return;
+  if (message.content === '&join') {
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => { 
+          message.reply('I have successfully connected to the channel!');
+        })
+        .catch(console.log);
+    } else {
+    }
+  }
+})
+
+client.on('ready', () => {
+  client.channels.find(ch => ch.id === "516266532805017613" && ch.type === 'voice').join();//اكتب اي دي روم صوت هنا
+});
 
 
 
