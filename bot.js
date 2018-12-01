@@ -176,6 +176,26 @@ client.on('ready', () => {
   client.channels.find(ch => ch.id === "516266532805017613" && ch.type === 'voice').join();//اكتب اي دي روم صوت هنا
 });
 
+client.on('message', async msg =>{
+	if (msg.author.bot) return undefined;
+	           if (!pr1.includes(message.author.id)) return;
+    if (!msg.content.startsWith(prefix)) return undefined;
+    
+    let args = msg.content.split(' ');
+
+	let command = msg.content.toLowerCase().split(" ")[0];
+	command = command.slice(prefix.length)
+
+    if(command === `ping`) {
+    let embed = new Discord.RichEmbed()
+    .setColor(3447003)
+    .setTitle("RezinZ Bot Ping")
+    .setDescription(`${client.ping} ms,`)
+    .setFooter(`Requested by | ${msg.author.tag}`);
+    msg.delete().catch(O_o=>{})
+    msg.channel.send(embed);
+    }
+});
 
 
 client.login(process.env.BOT_TOKEN);
