@@ -213,17 +213,12 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   member.guild.fetchInvites().then(guildInvites => {
     const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const logChannel = member.guild.channels.find(channel => channel.name === "rinv");
-    logChannel.send(`<@$invite.inviter.id> Invited by: <@${inviter.tag}>`);
-  });
-    const stewart = member.guild.channels.find("name", "rinv");
+    const stewart = member.guild.channels.find("name", "welcome");
      stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-   stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} `);
+    stewart.send(`<@${member.user.id}> joined using invite code https://discord.gg/${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
 });
-//
 
 client.login(process.env.BOT_TOKEN);
