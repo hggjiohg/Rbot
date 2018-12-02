@@ -220,6 +220,6 @@ client.on('guildMemberAdd', member => {
     logChannel.send(`Invited by: <@${inviter.tag}>`);
   });
 });
-
+//
 
 client.login(process.env.BOT_TOKEN);
