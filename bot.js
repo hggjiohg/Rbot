@@ -217,7 +217,7 @@ client.on('guildMemberAdd', member => {
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
     const logChannel = member.guild.channels.find(channel => channel.name === "rinv");
-    msg.channel.send('Invited by: <@${inviter.tag}>');
+    msg.channel.send('${client.user.id} Invited by: <@${inviter.tag}>');
   });
 });
 
